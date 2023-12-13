@@ -1,11 +1,11 @@
 .App {
   box-sizing: border-box;
-  width: 100dvw;
-  min-height: calc(100dvh - 7rem);
+  width: 100vw;
+  min-height: calc(100vh - 9rem);
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -34,9 +34,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
-}
-.footer p {
-  padding: 0.3rem 0;
 }
 .logosec {
   display: flex;

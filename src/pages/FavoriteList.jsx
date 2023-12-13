@@ -82,7 +82,9 @@ const FavoriteList = () => {
         <div className="sort-filter-options">
           <h2>
             Movies &gt;
-            <span className="locatspan">{location.pathname.slice(1)}</span>
+            <span className="locatspan">
+              {" " + location.pathname.slice(1)}
+            </span>
           </h2>
           <div>
             <button onClick={handleSortByRating}>Sort by Rating</button>
