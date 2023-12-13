@@ -4,5 +4,5 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  max-height: 100dvh;
+  /* min-height: 100dvh; */
 }

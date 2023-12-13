@@ -7,14 +7,16 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path={"/Favorite"} element={<FavoriteList />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path={"/Favorite"} element={<FavoriteList />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
