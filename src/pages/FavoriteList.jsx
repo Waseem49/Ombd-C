@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const FavoriteList = () => {
-  const [data] = useState(JSON.parse(localStorage.getItem("movie")) || []);
+  const [data] = useState(
+    () => JSON.parse(localStorage.getItem("movie")) || []
+  );
   const location = useLocation();
-  console.log(location);
   const [originalData, setOriginalData] = useState(data);
   const [movies, setMovies] = useState(data);
   const [selectedGenre, setSelectedGenre] = useState("");
@@ -16,21 +17,18 @@ const FavoriteList = () => {
   const [noDataMessage, setNoDataMessage] = useState("");
 
   useEffect(() => {
-    const extractedGenres = [...new Set(data?.map((movie) => movie.Genre))];
-    const extractedReleaseDates = [
-      ...new Set(data.map((movie) => movie.Released)),
+    const extractedGenres = [
+      ...new Set(originalData?.map((movie) => movie.Genre)),
     ];
-    setOriginalData(data);
-    setMovies(data);
-    setSelectedGenre("");
-    setSelectedDate("");
-    setSortBy("");
+    const extractedReleaseDates = [
+      ...new Set(originalData.map((movie) => movie.Released)),
+    ];
     setGenres(extractedGenres);
     setReleaseDates(extractedReleaseDates);
-  }, []);
+  }, [originalData]);
 
-  const applyFiltersAndSort = (moviesToFilter) => {
-    let filteredMovies = [...moviesToFilter];
+  useEffect(() => {
+    let filteredMovies = [...originalData];
 
     if (selectedGenre !== "") {
       filteredMovies = filteredMovies.filter((movie) =>
@@ -50,31 +48,14 @@ const FavoriteList = () => {
       filteredMovies.sort((a, b) => b.imdbRating - a.imdbRating);
     }
 
-    return filteredMovies;
-  };
+    setMovies(filteredMovies);
 
-  const handleSortByRating = () => {
-    setSortBy("rating");
-    setMovies(applyFiltersAndSort(originalData));
-  };
-
-  const handleFilterByGenre = (selectedGenre) => {
-    setSelectedGenre(selectedGenre);
-    setMovies(applyFiltersAndSort(originalData));
-  };
-
-  const handleFilterByReleaseDate = (selectedDate) => {
-    setSelectedDate(selectedDate);
-    setMovies(applyFiltersAndSort(originalData));
-  };
-
-  useEffect(() => {
-    if (movies.length === 0) {
-      setNoDataMessage();
+    if (filteredMovies.length === 0) {
+      setNoDataMessage("No such movies found.");
     } else {
       setNoDataMessage("");
     }
-  }, [movies]);
+  }, [selectedGenre, selectedDate, sortBy, originalData]);
 
   return (
     <div>
@@ -87,10 +68,10 @@ const FavoriteList = () => {
             </span>
           </h2>
           <div>
-            <button onClick={handleSortByRating}>Sort by Rating</button>
+            <button onClick={() => setSortBy("rating")}>Sort by Rating</button>
             <select
               className="custom-select"
-              onChange={(e) => handleFilterByGenre(e.target.value)}>
+              onChange={(e) => setSelectedGenre(e.target.value)}>
               <option value="">Filter by Genre</option>
               {genres.map((genre, index) => (
                 <option key={index} value={genre}>
@@ -100,7 +81,7 @@ const FavoriteList = () => {
             </select>
             <select
               className="custom-select"
-              onChange={(e) => handleFilterByReleaseDate(e.target.value)}>
+              onChange={(e) => setSelectedDate(e.target.value)}>
               <option value="">Filter by Release Date</option>
               {releaseDates.map((date, index) => (
                 <option key={index} value={date}>
