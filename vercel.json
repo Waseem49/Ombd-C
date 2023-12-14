@@ -1,6 +1,3 @@
 {
-  "routes": [
-    { "src": "/(.*)", "dest": "/" },
-    { "src": "/Favorite", "dest": "/" }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
