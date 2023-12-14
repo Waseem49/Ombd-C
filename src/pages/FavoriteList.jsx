@@ -3,11 +3,9 @@ import MovieCard from "../components/MovieCard";
 import { useLocation } from "react-router-dom";
 
 const FavoriteList = () => {
-  const [data] = useState(
-    () => JSON.parse(localStorage.getItem("movie")) || []
-  );
+  const [data] = useState(JSON.parse(localStorage.getItem("movie")) || []);
   const location = useLocation();
-  const [originalData, setOriginalData] = useState(data);
+  const [originalData] = useState(data);
   const [movies, setMovies] = useState(data);
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedDate, setSelectedDate] = useState("");

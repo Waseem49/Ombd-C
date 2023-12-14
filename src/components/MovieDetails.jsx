@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Mycontext } from "../context/MyContext";
+import { useEffect } from "react";
 
-const MovieDetails = ({ movie }) => {
-  const moviesinlocalStorage = JSON.parse(localStorage.getItem("movie")) || [];
-  // console.log(moviesinlocalStorage);
+const MovieDetails = () => {
+  const { movie, moviedatalist } = useContext(Mycontext);
+  const [text, setText] = useState(
+    moviedatalist.some((el) => el.Title === movie.Title)
+  );
   const addToFavorite = () => {
-    localStorage.setItem(
-      "movie",
-      JSON.stringify([...moviesinlocalStorage, movie])
-    );
+    if (!text) {
+      localStorage.setItem("movie", JSON.stringify([...moviedatalist, movie]));
+      setText(true);
+    }
   };
+
+  useEffect(() => {
+    setText(moviedatalist.some((el) => el.Title === movie.Title));
+    return () => {
+      setText(false);
+    };
+  }, [movie]);
 
   return (
     <div className="movie_details">
@@ -44,7 +55,9 @@ const MovieDetails = ({ movie }) => {
           :{movie?.Language}
         </p>
         <div>
-          <button onClick={addToFavorite}>Add to Favourite</button>
+          <button onClick={addToFavorite} disabled={text}>
+            {text ? "Added" : "Add to Favourite"}
+          </button>
         </div>
       </div>
     </div>

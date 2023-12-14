@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Mycontext } from "../context/MyContext";
 
 const MovieSearch = (props) => {
+  const { setSearch, setshowmodal, getMovie } = useContext(Mycontext);
+
   const handleclick = (e) => {
-    props.setSearch("");
-    props.getMovie(props.imdbID);
-    props.setshowmodal((p) => !p);
+    setSearch("");
+    setshowmodal((p) => !p);
+    getMovie(props.imdbID);
   };
   return (
     <div className="searchitem" onClick={handleclick}>

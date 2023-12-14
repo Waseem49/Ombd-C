@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaHeart } from "react-icons/fa6";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { Mycontext } from "../context/MyContext";
 
 const Header = () => {
-  const [auth] = useState(true);
+  const { auth } = useContext(Mycontext);
   return (
     <div className="navbar">
       <Link to={"/"}>
