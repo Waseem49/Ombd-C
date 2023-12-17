@@ -3,7 +3,7 @@
 <br />
 <h2 align="center">🖥️ Tech Stack</h2>
 <p align="center">
-<!--    <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="nextjs" /> -->
+<!--    <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="next" /> -->
     <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="reactjs" />
     <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" />
     <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=teal"   alt="react-router" />
@@ -21,7 +21,7 @@
 <h3 align="center"><a href="https://ombd-c-waseem49.vercel.app/" target="_blank"><strong>Want to see live preview »</strong></a></h3>
 <br />
 <br />
-"Discover and organize your favorite movies with our OMDb app! Easily search for movies, explore detailed information, and add them to your personalized favorites list. Whether you're a movie enthusiast or looking for your next watch, our app lets you curate your own collection. Seamlessly navigate your favorite movies in one place, making it a breeze to keep track of the films you love. Experience the joy of movie discovery and create your own watchlist today!"
+"Discover and organize your favorite movies with our OMDb app! Easily search for movies, explore detailed information, and add them to your personalized favorites list. Whether you're a movie enthusiast or looking for your next watch, our app lets you curate your collection. Seamlessly navigate your favorite movies in one place, making it a breeze to keep track of the films you love. Experience the joy of movie discovery and create your watchlist today!"
 <br />
 <br />
 
