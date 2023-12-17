@@ -12,7 +12,6 @@ const FavoriteList = () => {
   const [sortBy, setSortBy] = useState("");
   const [genres, setGenres] = useState([]);
   const [releaseDates, setReleaseDates] = useState([]);
-  const [noDataMessage, setNoDataMessage] = useState("");
 
   useEffect(() => {
     const extractedGenres = [
@@ -45,14 +44,7 @@ const FavoriteList = () => {
     } else if (sortBy === "rating") {
       filteredMovies.sort((a, b) => b.imdbRating - a.imdbRating);
     }
-
     setMovies(filteredMovies);
-
-    if (filteredMovies.length === 0) {
-      setNoDataMessage("No such movies found.");
-    } else {
-      setNoDataMessage("");
-    }
   }, [selectedGenre, selectedDate, sortBy, originalData]);
 
   return (

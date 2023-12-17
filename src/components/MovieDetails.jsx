@@ -4,9 +4,8 @@ import { useEffect } from "react";
 
 const MovieDetails = () => {
   const { movie, moviedatalist } = useContext(Mycontext);
-  const [text, setText] = useState(
-    moviedatalist.some((el) => el.Title === movie.Title)
-  );
+  const [text, setText] = useState(false);
+
   const addToFavorite = () => {
     if (!text) {
       localStorage.setItem("movie", JSON.stringify([...moviedatalist, movie]));
@@ -15,10 +14,9 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
-    setText(moviedatalist.some((el) => el.Title === movie.Title));
-    return () => {
-      setText(false);
-    };
+    const localdata = JSON.parse(localStorage.getItem("movie")) || [];
+    const moviepersent = localdata.filter((el) => el.Title === movie.Title);
+    moviepersent.length > 0 ? setText(true) : setText(false);
   }, [movie]);
 
   return (

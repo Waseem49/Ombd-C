@@ -1,5 +1,5 @@
 // HomePage.js
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import MovieSearch from "../components/MovieSearch";
 import MovieDetails from "../components/MovieDetails";
 import { Mycontext } from "../context/MyContext";
