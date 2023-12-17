@@ -90,12 +90,11 @@ const FavoriteList = () => {
           </div>
         </div>
       </div>
-      {noDataMessage && <p>{noDataMessage}</p>}
       <div className="movie-grid">
         {movies?.length > 0 ? (
           movies?.map((movie, index) => <MovieCard key={index} movie={movie} />)
         ) : (
-          <p>No such movies found.....</p>
+          <h2>Movies not found in FavoriteList.....</h2>
         )}
       </div>
     </div>

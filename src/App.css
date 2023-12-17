@@ -20,6 +20,10 @@
   padding: 0 1rem;
   font-size: large;
 }
+
+.navbar a {
+  text-decoration: none;
+}
 .logosec > p {
   text-decoration: none;
   color: azure;
@@ -90,6 +94,7 @@ input::placeholder {
 .mainlist {
   position: relative;
 }
+
 .searchList {
   margin: auto;
   width: 35%;
@@ -157,6 +162,7 @@ button:hover {
   justify-content: space-around;
   background-color: black;
   padding: 3px;
+  cursor: pointer;
 }
 .searchitem img {
   width: 45px;
@@ -258,5 +264,30 @@ button:hover {
   .sort-filter-options {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media all and (max-width: 760px) {
+  #input {
+    width: 80%;
+  }
+  .searchList {
+    width: 65%;
+  }
+  .poster img {
+    display: block;
+    margin: auto;
+  }
+  .movie_details {
+    display: flex;
+    flex-direction: column;
+  }
+  .movie_details div {
+    padding: 1rem;
+    text-align: center;
+  }
+  .movie_details div div {
+    width: fit-content;
+    margin: auto;
   }
 }

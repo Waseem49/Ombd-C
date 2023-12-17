@@ -12,8 +12,6 @@ const HomePage = () => {
     search,
     setSearch,
     searchResult,
-    movie,
-    moviedatalist,
   } = useContext(Mycontext);
 
   useEffect(() => {
