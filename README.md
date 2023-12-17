@@ -1,5 +1,5 @@
 <h1 align="center">Ombd'C</h1>
-<h3 align="center">MovieLee is your ultimate destination for all things cinema. Dive into the world of movies, explore the latest releases, discover hidden gems, and stay up-to-date with your favorite actors and directors.</h3>
+<h3 align="center">Ombd'C is your ultimate destination for all things cinema. Dive into the world of movies, explore the latest releases, discover hidden gems, and stay up-to-date with your favorite actors and directors.</h3>
 <br />
 <h2 align="center">🖥️ Tech Stack</h2>
 <p align="center">
@@ -18,10 +18,10 @@
 <p align="center">  
   <img src="https://img.shields.io/badge/Vercel-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
 </p>
-<h3 align="center"><a href="https://movielee-waseem49.vercel.app/" target="_blank"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://ombd-c-waseem49.vercel.app/" target="_blank"><strong>Want to see live preview »</strong></a></h3>
 <br />
 <br />
-"Developed a feature-rich  web application called 'MovieLee' using a full-stack tech-stack like Next.js, React.js, MongoDB.This project demonstrates proficiency in web development, database management. I have built this to explore Next.Js Tech-Stack"
+"Discover and organize your favorite movies with our OMDb app! Easily search for movies, explore detailed information, and add them to your personalized favorites list. Whether you're a movie enthusiast or looking for your next watch, our app lets you curate your own collection. Seamlessly navigate your favorite movies in one place, making it a breeze to keep track of the films you love. Experience the joy of movie discovery and create your own watchlist today!"
 <br />
 <br />
 
@@ -29,7 +29,7 @@
 - Landing Page
 - Favorite-list & Movie-Details Page
 ## 🚀 User can Do
-- User can add a movie to Favorite-list
+- User can add a Movie to Favorite-list
 <br />
 <br />
 <h1 align="center"> 🏷️ Landing Page or Home Page </h1>
